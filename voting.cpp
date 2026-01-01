@@ -18,6 +18,6 @@ int main() {
     cout<<"Tidak Setuju: "<<suaraTidak<<"\n";
     if (suaraSetuju > suaraTidak) cout<<"Keputusan: Disetujui\n";
     else if (suaraTidak > suaraSetuju) cout<<"Keputusan: Tidak Disetujui\n";
-    else cout<<"Keputusan: Seri\n";
+    else cout<<"Keputusan: SERI\n";
     return 0;
 }
