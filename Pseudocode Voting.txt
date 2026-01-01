@@ -1,0 +1,32 @@
+BEGIN
+    DECLARE jumlahPemilih, suaraSetuju, suaraTidak, i AS INTEGER
+    SET suaraSetuju = 0
+    SET suaraTidak = 0
+    
+    OUTPUT "Jumlah Pemilih: "
+    INPUT jumlahPemilih
+    
+    DECLARE suara AS ARRAY[jumlahPemilih] OF INTEGER
+    
+    FOR i = 0 TO jumlahPemilih - 1 DO
+        OUTPUT "Suara Pemilih ke-", i+1, " (1=Setuju, 0=Tidak): "
+        INPUT suara[i]
+        
+        IF suara[i] == 1 THEN
+            suaraSetuju = suaraSetuju + 1
+        ELSE
+            suaraTidak = suaraTidak + 1
+        END IF
+    END FOR
+    
+    OUTPUT ""
+    OUTPUT "===HASIL VOTING==="
+    OUTPUT "Setuju: ", suaraSetuju
+    OUTPUT "Tidak Setuju: ", suaraTidak
+    
+    IF suaraSetuju > suaraTidak THEN
+        OUTPUT "Keputusan: DISETUJUI"
+    ELSE
+        OUTPUT "Keputusan: DITOLAK"
+    END IF
+END
